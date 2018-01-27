@@ -9,6 +9,14 @@
 import UIKit
 
 class Product{
+    var name: String
+    var price:Double
+    var unit:String
+    
+    init(name:String,price:Double,unit:String){
+        self.name = name
+        self.price = price
+        self.unit = unit
+    }
     
 }
-

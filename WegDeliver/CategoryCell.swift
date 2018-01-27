@@ -13,7 +13,7 @@ class CategoryCell:UITableViewCell{
    
     
     func updateLabels() {
-        let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
         title.font = bodyFont
     }
 }
