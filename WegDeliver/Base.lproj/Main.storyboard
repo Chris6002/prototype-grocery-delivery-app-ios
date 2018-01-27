@@ -72,19 +72,10 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QgN-oe-r6k" id="C1w-GH-plm">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3bu-yc-xmD">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <connections>
-                                                <action selector="cellSelected:" destination="FNh-FW-BLv" eventType="touchUpInside" id="bML-lm-zcV"/>
-                                            </connections>
-                                        </button>
-                                    </subviews>
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="CategoryCell"/>
                                 <connections>
-                                    <segue destination="mHo-KD-DwC" kind="show" id="vyw-mw-TYl"/>
+                                    <segue destination="mHo-KD-DwC" kind="show" id="g4K-zu-ig6"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>

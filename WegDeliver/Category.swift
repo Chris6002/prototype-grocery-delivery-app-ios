@@ -10,7 +10,7 @@ import UIKit
 
 class Category:UITableViewController{
   
- 
+    
     let sections: [CategorySection] = [CategorySection(type:"Baby Essentials")
         ,CategorySection(type:"Bakery")
         ,CategorySection(type:"Beer Shop")
@@ -79,10 +79,10 @@ class Category:UITableViewController{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as? CategoryCell
         
         let viewCategoryVC = segue.destination as! ViewProductCollection
-        viewCategoryVC.title = nextVC
-        
+        viewCategoryVC.title = cell?.textLabel?.text
     }
   
 }
