@@ -8,6 +8,12 @@
 
 import UIKit
 
-class OrderCell:UITableViewCell{
+class CategoryCell:UITableViewCell{
+    @IBOutlet var title: UILabel!
+   
     
-}ß
+    func updateLabels() {
+        let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.body)
+        title.font = bodyFont
+    }
+}

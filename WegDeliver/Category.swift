@@ -1,5 +1,5 @@
 //
-//  Product.swift
+//  Category.swift
 //  WegDeliver
 //
 //  Created by Tianyou Xiao on 1/27/18.
@@ -8,7 +8,6 @@
 
 import UIKit
 
-class Product{
+class Category:UITableViewController{
     
 }
-

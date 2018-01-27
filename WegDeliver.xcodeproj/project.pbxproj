@@ -17,7 +17,8 @@
 		CA737340201CEFFA00A1B6D5 /* WegDeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73733F201CEFFA00A1B6D5 /* WegDeliverUITests.swift */; };
 		CA73734E201CF77700A1B6D5 /* OrderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73734D201CF77700A1B6D5 /* OrderDataSource.swift */; };
 		E19A48E5201D07C700EE7159 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48E4201D07C700EE7159 /* CategoryCell.swift */; };
-		E19A48E7201D085200EE7159 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48E6201D085200EE7159 /* Product.swift */; };
+		E19A48E7201D085200EE7159 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48E6201D085200EE7159 /* Category.swift */; };
+		E19A48E9201D0D8400EE7159 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48E8201D0D8400EE7159 /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,7 +55,8 @@
 		CA737341201CEFFA00A1B6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA73734D201CF77700A1B6D5 /* OrderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataSource.swift; sourceTree = "<group>"; };
 		E19A48E4201D07C700EE7159 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
-		E19A48E6201D085200EE7159 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E19A48E6201D085200EE7159 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		E19A48E8201D0D8400EE7159 /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,7 +116,8 @@
 				CA73732B201CEFF900A1B6D5 /* Info.plist */,
 				CA737323201CEFF900A1B6D5 /* WegDeliver.xcdatamodeld */,
 				E19A48E4201D07C700EE7159 /* CategoryCell.swift */,
-				E19A48E6201D085200EE7159 /* Product.swift */,
+				E19A48E6201D085200EE7159 /* Category.swift */,
+				E19A48E8201D0D8400EE7159 /* Product.swift */,
 			);
 			path = WegDeliver;
 			sourceTree = "<group>";
@@ -276,7 +279,8 @@
 				E19A48E5201D07C700EE7159 /* CategoryCell.swift in Sources */,
 				CA73731F201CEFF900A1B6D5 /* ViewController.swift in Sources */,
 				CA73731D201CEFF900A1B6D5 /* AppDelegate.swift in Sources */,
-				E19A48E7201D085200EE7159 /* Product.swift in Sources */,
+				E19A48E7201D085200EE7159 /* Category.swift in Sources */,
+				E19A48E9201D0D8400EE7159 /* Product.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
