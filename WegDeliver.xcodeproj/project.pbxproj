@@ -15,6 +15,7 @@
 		CA73732A201CEFF900A1B6D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA737328201CEFF900A1B6D5 /* LaunchScreen.storyboard */; };
 		CA737335201CEFF900A1B6D5 /* WegDeliverTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA737334201CEFF900A1B6D5 /* WegDeliverTests.swift */; };
 		CA737340201CEFFA00A1B6D5 /* WegDeliverUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73733F201CEFFA00A1B6D5 /* WegDeliverUITests.swift */; };
+		CA73734E201CF77700A1B6D5 /* OrderDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA73734D201CF77700A1B6D5 /* OrderDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		CA73733B201CEFFA00A1B6D5 /* WegDeliverUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WegDeliverUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA73733F201CEFFA00A1B6D5 /* WegDeliverUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WegDeliverUITests.swift; sourceTree = "<group>"; };
 		CA737341201CEFFA00A1B6D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA73734D201CF77700A1B6D5 /* OrderDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		CA73731B201CEFF900A1B6D5 /* WegDeliver */ = {
 			isa = PBXGroup;
 			children = (
+				CA73734D201CF77700A1B6D5 /* OrderDataSource.swift */,
 				CA73731C201CEFF900A1B6D5 /* AppDelegate.swift */,
 				CA73731E201CEFF900A1B6D5 /* ViewController.swift */,
 				CA737320201CEFF900A1B6D5 /* Main.storyboard */,
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CA73734E201CF77700A1B6D5 /* OrderDataSource.swift in Sources */,
 				CA737325201CEFF900A1B6D5 /* WegDeliver.xcdatamodeld in Sources */,
 				CA73731F201CEFF900A1B6D5 /* ViewController.swift in Sources */,
 				CA73731D201CEFF900A1B6D5 /* AppDelegate.swift in Sources */,
