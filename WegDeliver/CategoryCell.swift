@@ -8,6 +8,6 @@
 
 import UIKit
 
-class ProductCell{
+class OrderCell:UITableViewCell{
     
-}
+}ß
