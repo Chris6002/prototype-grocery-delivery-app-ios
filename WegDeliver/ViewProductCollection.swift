@@ -70,8 +70,7 @@ class ViewProductCollection: UIViewController {
                     }
                     
                     //Request product info by search criterion
-                    let productBaseURL = URL(string: "https://wegmans-es.azure-api.net/productpublic/producthierarchies/")!;
-                    let productSearchURL = productBaseURL + "Marketing/" + "EZ Meals/" + "Asian"
+                    let productSearchURL = URL(string: "https://wegmans-es.azure-api.net/productpublic/producthierarchies/Marketing/EZ Meals/Asian")!;
                     
                     var productRequest = URLRequest(url: productSearchURL)
                     productRequest.httpMethod = "GET"
