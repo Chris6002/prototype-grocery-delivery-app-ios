@@ -50,7 +50,7 @@ class ViewProductCollection: UIViewController {
         keyRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         let code = "client_id=24960d97-4fbe-433d-ab8a-efeb89aa524e&grant_type=client_credentials&resource=https://wegmans-es.azure-api.net&client_secret=A8N7VeeCdFD5N4OxeQT1gFaXNStrxieEplYl3SYdxTs=".data(using:String.Encoding.ascii, allowLossyConversion: false)
         keyRequest.httpBody = code
-        let task = URLSession.shared.dataTask(with: keyRequest) { (data: Data?, response: URLResponse?, error: Error?) in
+        let keyTask = URLSession.shared.dataTask(with: keyRequest) { (data: Data?, response: URLResponse?, error: Error?) in
             if error != nil{
                 return
             }
@@ -77,13 +77,20 @@ class ViewProductCollection: UIViewController {
                 productRequest.addValue(authorization, forHTTPHeaderField: "Authorization")
                 
                 URLSession.shared.dataTask(with: productRequest) { (data, response, error) in
-                    
+                    if error != nil{
+                        return
+                    }
                     if let data = data, let string = String(data: data, encoding: .utf8) {
                         print("Product Request")
                         print(string)
-                        let prodTree: hierarchy = try JSONSerialization.jsonObject(with: data, options: [])
-                        let prodArr = prodTree.Nodes[0].ChildNodes[0].ChildNodes
-                        print(prodArr)
+                        do{
+                            let prodFromJson = try JSONSerialization.jsonObject(with: data, options: [])
+                            let prodTree = hierarchy(json: prodFromJson as! [String: Any])
+                            let prodArr = prodTree?.nodes[0].childNodes[0].childNodes
+                            print(prodArr)
+                        }catch let error{
+                            print("Prod JSON Parse error!")
+                        }
                     }else{
                         print("failed")
                     }
@@ -92,7 +99,7 @@ class ViewProductCollection: UIViewController {
             }
             
         }
-        task.resume()
+        keyTask.resume()
         
     }
     
@@ -109,24 +116,76 @@ extension URL {
 }
 
 class hierarchy{
-    var Name: String
-    var Nodes: [levelOne]
+    var name: String
+    var nodes: [LevelOne]
+    init?(json: [String: Any]){
+        guard let name = json["Name"] as? String,
+              let nodesJson = json["Nodes"] as? [[String: Any]]
+        else{ return nil }
+        var nodes: [LevelOne] = []
+        for string in nodesJson{
+            guard let node = LevelOne(json: string) else {return nil}
+            nodes.append(node)
+        }
+        self.name = name
+        self.nodes = nodes
+    }
 }
 
-class levelOne{
-    var Description: String
-    var Level: String
-    var ChildNodes: [levelTwo]
+class LevelOne{
+    var description: String
+    var level: String
+    var childNodes: [LevelTwo]
+    init?(json: [String: Any]){
+        guard let description = json["Description"] as? String,
+              let level = json["Level"] as? String,
+              let childNodesJson = json["ChildNodes"] as? [[String: Any]]
+        else{ return nil }
+        var childNodes: [LevelTwo] = []
+        for string in childNodesJson{
+            guard let childNode = LevelTwo(json: string) else {return nil}
+            childNodes.append(childNode)
+        }
+        self.description = description
+        self.level = level
+        self.childNodes = childNodes
+    }
 }
 
-class levelTwo{
-    var Description: String
-    var Level: String
-    var ChildNodes: [Item]
+class LevelTwo{
+    var description: String
+    var level: String
+    var childNodes: [Item]
+    init?(json: [String: Any]){
+        guard let description = json["Description"] as? String,
+              let level = json["Level"] as? String,
+            let childNodesJson = json["ChildNodes"] as? [[String: Any]]
+        else{ return nil }
+        var childNodes: [Item] = []
+        for string in childNodesJson{
+            guard let childNode = Item(json: string) else {return nil}
+            childNodes.append(childNode)
+        }
+        self.description = description
+        self.level = level
+        self.childNodes = childNodes
+    }
 }
 
-class Item{
-    var Description: String
-    var Level: String
-    var Sku: Int
+class Item: CustomStringConvertible{
+    var name: String
+    var level: String
+    var sku: Int
+    var description: String{
+        return "Name: " + name + " SKU: " + sku.description
+    }
+    init?(json: [String: Any]){
+        guard let name = json["Description"] as? String,
+              let level = json["Level"] as? String,
+              let sku = json["Sku"] as? Int
+        else{ return nil}
+        self.name = name
+        self.level = level
+        self.sku = sku
+    }
 }
