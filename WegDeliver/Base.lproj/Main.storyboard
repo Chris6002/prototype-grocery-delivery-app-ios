@@ -89,6 +89,47 @@
             </objects>
             <point key="canvasLocation" x="754.39999999999998" y="32.833583208395808"/>
         </scene>
+        <!--View Product Collection-->
+        <scene sceneID="1XD-f7-05S">
+            <objects>
+                <tableViewController id="xES-O0-miQ" customClass="ViewProductCollection" customModule="WegDeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ELR-Wd-QYH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="PVCell" id="hFO-Y5-CXT" customClass="PVCell" customModule="WegDeliver" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hFO-Y5-CXT" id="1eO-0X-Vh1">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5u-JF-KHK">
+                                            <rect key="frame" x="16" y="12" width="343" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="name" destination="R5u-JF-KHK" id="q9c-wb-edU"/>
+                                    <segue destination="JWg-2f-bK7" kind="show" id="jZg-I3-cvm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="xES-O0-miQ" id="tTW-fP-B6h"/>
+                            <outlet property="delegate" destination="xES-O0-miQ" id="6fI-SW-VHc"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qBM-ia-DEF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522.4000000000001" y="37.331334332833585"/>
+        </scene>
         <!--Meals-->
         <scene sceneID="DD9-gA-15G">
             <objects>
@@ -106,7 +147,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="mHo-KD-DwC" kind="show" id="KNq-3a-UAm"/>
+                                    <segue destination="xES-O0-miQ" kind="show" id="Kcy-p9-Ud0"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,55 +222,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lBi-9k-hhH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1500" y="796.55172413793105"/>
-        </scene>
-        <!--View Product Collection-->
-        <scene sceneID="TdG-sg-cQg">
-            <objects>
-                <collectionViewController id="mHo-KD-DwC" customClass="ViewProductCollection" customModule="WegDeliver" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="Csu-jp-Baw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FcD-Cy-Iri">
-                            <size key="itemSize" width="147" height="166"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PVCell" id="eBk-xy-A1S" customClass="PVCell" customModule="WegDeliver" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="147" height="166"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
-                                    <rect key="frame" x="0.0" y="0.0" width="147" height="166"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="guc-ek-ZvY" userLabel="name">
-                                            <rect key="frame" x="0.0" y="31" width="147" height="105"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <color key="tintColor" red="0.19837473694772845" green="0.38665380961231388" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </view>
-                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <connections>
-                                    <outlet property="name" destination="guc-ek-ZvY" id="0R9-w7-JsW"/>
-                                    <segue destination="JWg-2f-bK7" kind="show" id="asE-yh-hjQ"/>
-                                </connections>
-                            </collectionViewCell>
-                        </cells>
-                    </collectionView>
-                    <connections>
-                        <outlet property="collectionView" destination="Csu-jp-Baw" id="xZx-EA-Jsb"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="83x-V5-4Ri" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1500" y="33.733133433283363"/>
         </scene>
     </scenes>
 </document>

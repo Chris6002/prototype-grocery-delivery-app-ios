@@ -8,10 +8,13 @@
 
 import UIKit
 
-class PVCell:UICollectionViewCell{
+class PVCell:UITableViewCell{
     
    //@IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var name: UILabel!
-    
+    func updateLabels() {
+        let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)
+        name.font = bodyFont
+    }
 }

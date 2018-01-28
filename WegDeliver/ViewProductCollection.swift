@@ -8,25 +8,18 @@
 
 import UIKit
 
-class ViewProductCollection: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
-    
+class ViewProductCollection: UITableViewController{
+    var product:[Item] = []
    
-    @IBOutlet var collectionView: UICollectionView!
-    
-    var product: [Item] = []
-    //let entreeDataSource = EntreeDataSource()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        collectionView.reloadData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.getProduct()
-        collectionView.delegate = self
-        collectionView.dataSource = ProductDataSource(item:product)
+        getProduct()
+        let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
+        let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
+        tableView.delegate = self
+        tableView.contentInset = insets
+        tableView.scrollIndicatorInsets = insets
         
     }
     
@@ -34,20 +27,33 @@ class ViewProductCollection: UIViewController,UICollectionViewDelegateFlowLayout
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    func reLoad(){
-        
-        self.collectionView.reloadData()
-        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "All Product"
+    }
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return product.count
+    }
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "PVCell", for: indexPath) as! PVCell
+        let category = product[indexPath.row]
+        
+        cell.name.text = category.name
+        
+        return cell
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ViewProduct" {
-            if (collectionView.indexPathsForSelectedItems?.first) != nil {
-                //let entree = entreeDataSource.entrees[selectedIndexPath.row]
+       
                 let product = Product(name:"",price:1.234,unit:"/per");
                 let viewProductVC = segue.destination as! ViewProductVC
                 viewProductVC.product = product
-            }
-        }
     }
     
     func getProduct(){
@@ -94,11 +100,13 @@ class ViewProductCollection: UIViewController,UICollectionViewDelegateFlowLayout
                             let prodTree = hierarchy(json: prodFromJson as! [String: Any])
                             let prodArr = prodTree?.nodes[0].childNodes[0].childNodes
                             //print(prodArr)
-                            self.product = prodArr!
+                            
                             //print(self.product)
                             
                             DispatchQueue.main.async(){
-                                self.reLoad()
+                                self.product = prodArr!
+                                print(self.product)
+                                self.tableView.reloadData()
                             }
                         }catch let error{
                             print("Prod JSON Parse error!")
