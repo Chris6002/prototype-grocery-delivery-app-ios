@@ -78,10 +78,12 @@ class ViewProductCollection: UIViewController {
                 
                 URLSession.shared.dataTask(with: productRequest) { (data, response, error) in
                     
-                    if let data = data,
-                        let string = String(data: data, encoding: .utf8) {
+                    if let data = data, let string = String(data: data, encoding: .utf8) {
                         print("Product Request")
                         print(string)
+                        let prodTree: hierarchy = try JSONSerialization.jsonObject(with: data, options: [])
+                        let prodArr = prodTree.Nodes[0].ChildNodes[0].ChildNodes
+                        print(prodArr)
                     }else{
                         print("failed")
                     }
@@ -104,4 +106,27 @@ extension URL {
         components?.queryItems = queries.flatMap { URLQueryItem(name: $0.0, value: $0.1) }
         return components?.url
     }
+}
+
+class hierarchy{
+    var Name: String
+    var Nodes: [levelOne]
+}
+
+class levelOne{
+    var Description: String
+    var Level: String
+    var ChildNodes: [levelTwo]
+}
+
+class levelTwo{
+    var Description: String
+    var Level: String
+    var ChildNodes: [Item]
+}
+
+class Item{
+    var Description: String
+    var Level: String
+    var Sku: Int
 }
