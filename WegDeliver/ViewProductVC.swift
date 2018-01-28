@@ -26,7 +26,11 @@ class ViewProductVC:UIViewController{
         super.viewDidLoad()
         name.text = nameLabel
         descrip.text = des
-        price.text = "3.99"
+        price.text = "2.69"
+        
+        if(name.text == "Roasted Turkey Breast"){
+            image.image = UIImage(named: "4562")
+        }
     }
     
     @IBAction func addList(_ sender:AnyObject){
