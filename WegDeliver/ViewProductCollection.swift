@@ -70,16 +70,13 @@ class ViewProductCollection: UIViewController {
                     }
                     
                     //Request product info by search criterion
-                    let productBaseURL = URL(string: "https://wegmans-es.azure-api.net/productpublic/products/search?")!;
-                    
-                    let productQuery: [String: String] = ["criteria": "soda"]
-                    let productSearchURL = productBaseURL.withQueries(productQuery)!
+                    let productBaseURL = URL(string: "https://wegmans-es.azure-api.net/productpublic/producthierarchies/")!;
+                    let productSearchURL = productBaseURL + "Marketing/" + "EZ Meals/" + "Asian"
                     
                     var productRequest = URLRequest(url: productSearchURL)
                     productRequest.httpMethod = "GET"
                     productRequest.addValue("dbf9da0bc0814d07b6687136b4b36dd7", forHTTPHeaderField: "Product-Subscription-Key")
                     productRequest.addValue(authorization, forHTTPHeaderField: "Authorization")
-                    
                     
                     URLSession.shared.dataTask(with: productRequest) { (data, response, error) in
                         
