@@ -57,14 +57,13 @@ class ViewProductCollection: UIViewController {
             if let data = data{
                 var authorization = ""
                 do {
-                    let jsonObject: Any = try JSONSerialization.jsonObject(with: data, options: [])
-                    let jsonDict = jsonObject as! [String:String]
-                    let tokenType = jsonDict["token_type"]
-                    let accessToken = jsonDict["access_token"]
+                    let jsonAuthObject: Any = try JSONSerialization.jsonAuthObject(with: data, options: [])
+                    let jsonAuthDict = jsonAuthObject as! [String:String]
+                    let tokenType = jsonAuthDict["token_type"]
+                    let accessToken = jsonAuthDict["access_token"]
                     authorization = tokenType! + " " + accessToken!
-                }
-                catch let error {
-                    print("JSON Parse Error")
+                }catch let error {
+                    print("Auth JSON Parse Error")
                     return
                 }
                 
@@ -78,10 +77,17 @@ class ViewProductCollection: UIViewController {
                 
                 URLSession.shared.dataTask(with: productRequest) { (data, response, error) in
                     
-                    if let data = data,
-                        let string = String(data: data, encoding: .utf8) {
+                    if let data = data {
                         print("Product Request")
-                        print(string)
+                        do{
+                            let jsonRootObject: Any = try JSONSerialization.jsonRootObject(with: data, options: [])
+                            let jsonRootDict = jsonRootObject as! [String:String]
+                            let jsonNode1Object = jsonRootDict["Nodes"]
+                            print(jsonNode1Object)
+                        }catch let error{
+                            print("Prod JSON Parse Error")
+                            return
+                        }
                     }else{
                         print("failed")
                     }
