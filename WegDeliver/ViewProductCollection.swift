@@ -42,4 +42,14 @@ class ViewProductCollection: UIViewController {
             }
         }
     }
+    
+    func getAuth(){
+        var keyRequest = URLRequest(url: URL(string: "https://login.microsoftonline.com/1318d57f-757b-45b3-b1b0-9b3c3842774f/oauth2/token")!)
+        keyRequest.httpMethod = "POST"
+        keyRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+        let code = "client_id=24960d97-4fbe-433d-ab8a-efeb89aa524e&grant_type=client_credentials&resource=https://wegmans-es.azure-api.net&client_secret=A8N7VeeCdFD5N4OxeQT1gFaXNStrxieEplYl3SYdxTs=".data(using:String.Encoding.ascii, allowLossyConversion: false)
+        keyRequest.httpBody = code
+        
+    }
+        
 }
