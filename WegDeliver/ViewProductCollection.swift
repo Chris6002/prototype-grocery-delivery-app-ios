@@ -8,31 +8,37 @@
 
 import UIKit
 
-class ViewProductCollection: UIViewController {
+class ViewProductCollection: UIViewController,UICollectionViewDelegateFlowLayout,UICollectionViewDelegate {
     
    
     @IBOutlet var collectionView: UICollectionView!
     
-  
+    var product: [Item] = []
     //let entreeDataSource = EntreeDataSource()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getProduct()
-        //collectionView.dataSource = entreeDataSource
+        collectionView.reloadData()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.getProduct()
+        collectionView.delegate = self
+        collectionView.dataSource = ProductDataSource(item:product)
         
-        collectionView.reloadData()
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+    func reLoad(){
+        
+        self.collectionView.reloadData()
+        print("&&&&&&&&&&&&&&&&&&&&&&&&&&&")
+    }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ViewProduct" {
             if (collectionView.indexPathsForSelectedItems?.first) != nil {
@@ -82,12 +88,18 @@ class ViewProductCollection: UIViewController {
                     }
                     if let data = data, let string = String(data: data, encoding: .utf8) {
                         print("Product Request")
-                        print(string)
+                       // print(string)
                         do{
                             let prodFromJson = try JSONSerialization.jsonObject(with: data, options: [])
                             let prodTree = hierarchy(json: prodFromJson as! [String: Any])
                             let prodArr = prodTree?.nodes[0].childNodes[0].childNodes
-                            print(prodArr)
+                            //print(prodArr)
+                            self.product = prodArr!
+                            //print(self.product)
+                            
+                            DispatchQueue.main.async(){
+                                self.reLoad()
+                            }
                         }catch let error{
                             print("Prod JSON Parse error!")
                         }

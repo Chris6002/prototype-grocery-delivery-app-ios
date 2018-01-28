@@ -10,7 +10,7 @@ import UIKit
 
 class PVCell:UICollectionViewCell{
     
-    @IBOutlet weak var image: UIImageView!
+   //@IBOutlet weak var image: UIImageView!
     
     @IBOutlet weak var name: UILabel!
     
