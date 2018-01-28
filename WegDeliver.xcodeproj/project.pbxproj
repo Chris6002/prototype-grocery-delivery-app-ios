@@ -26,6 +26,7 @@
 		E19A48F9201D30F300EE7159 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48F8201D30F300EE7159 /* Product.swift */; };
 		E1E418BD201D5D8100D1C5CE /* EZMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E418BC201D5D8100D1C5CE /* EZMeals.swift */; };
 		E1E418BF201DA1EB00D1C5CE /* ProductDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E418BE201DA1EB00D1C5CE /* ProductDataSource.swift */; };
+		E1E418C1201E2CAC00D1C5CE /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E418C0201E2CAC00D1C5CE /* ListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -71,6 +72,7 @@
 		E19A48F8201D30F300EE7159 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 		E1E418BC201D5D8100D1C5CE /* EZMeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZMeals.swift; sourceTree = "<group>"; };
 		E1E418BE201DA1EB00D1C5CE /* ProductDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDataSource.swift; sourceTree = "<group>"; };
+		E1E418C0201E2CAC00D1C5CE /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +141,7 @@
 				E19A48F6201D2C0200EE7159 /* PVCell.swift */,
 				E1E418BC201D5D8100D1C5CE /* EZMeals.swift */,
 				E1E418BE201DA1EB00D1C5CE /* ProductDataSource.swift */,
+				E1E418C0201E2CAC00D1C5CE /* ListView.swift */,
 			);
 			path = WegDeliver;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			files = (
 				E1E418BF201DA1EB00D1C5CE /* ProductDataSource.swift in Sources */,
 				E19A48F5201D232800EE7159 /* ViewProductVC.swift in Sources */,
+				E1E418C1201E2CAC00D1C5CE /* ListView.swift in Sources */,
 				CA73734E201CF77700A1B6D5 /* OrderDataSource.swift in Sources */,
 				CA737325201CEFF900A1B6D5 /* WegDeliver.xcdatamodeld in Sources */,
 				E19A48E5201D07C700EE7159 /* CategoryCell.swift in Sources */,

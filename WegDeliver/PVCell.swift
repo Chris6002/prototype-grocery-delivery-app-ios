@@ -11,7 +11,8 @@ import UIKit
 class PVCell:UITableViewCell{
     
    //@IBOutlet weak var image: UIImageView!
-    
+    var descrip: String  = " "
+    var it:Item = Item()
     @IBOutlet weak var name: UILabel!
     func updateLabels() {
         let bodyFont = UIFont.preferredFont(forTextStyle: UIFontTextStyle.headline)

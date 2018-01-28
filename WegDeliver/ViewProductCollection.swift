@@ -45,15 +45,19 @@ class ViewProductCollection: UITableViewController{
         let category = product[indexPath.row]
         
         cell.name.text = category.name
-        
+        cell.descrip = category.description
+        cell.it = category
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       
-                let product = Product(name:"",price:1.234,unit:"/per");
-                let viewProductVC = segue.destination as! ViewProductVC
-                viewProductVC.product = product
+                let cell = sender as? PVCell
+            //let product = Product(name:(cell?.name.text)!,price:1.234,unit:"/per");
+                let nextView = segue.destination as! ViewProductVC
+                nextView.title = cell?.name.text
+                nextView.nameLabel = (cell?.name.text)!
+        nextView.it = (cell?.it)!
+        nextView.des = (cell?.descrip)!
     }
     
     func getProduct(){
@@ -193,9 +197,9 @@ class LevelTwo{
 }
 
 class Item: CustomStringConvertible{
-    var name: String
-    var level: String
-    var sku: Int
+    var name: String = ""
+    var level: String = ""
+    var sku: Int = 0
     var description: String{
         return "Name: " + name + " SKU: " + sku.description
     }
@@ -207,5 +211,8 @@ class Item: CustomStringConvertible{
         self.name = name
         self.level = level
         self.sku = sku
+    }
+    init(){
+       
     }
 }

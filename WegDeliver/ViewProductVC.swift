@@ -9,12 +9,7 @@
 import UIKit
 
 class ViewProductVC:UIViewController{
-    
-    var product:Product{
-        didSet {
-            navigationItem.title = product.name
-        }
-    }
+
     
     @IBOutlet weak var image: UIImageView!
     
@@ -23,11 +18,20 @@ class ViewProductVC:UIViewController{
     @IBOutlet weak var price: UILabel!
     
     @IBOutlet weak var descrip: UILabel!
+    var des:String = ""
+    var nameLabel:String = ""
+    var it: Item = Item()
+   
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        name.text = nameLabel
+        descrip.text = des
+        price.text = "3.99"
+    }
     
-    
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+    @IBAction func addList(_ sender:AnyObject){
+        ViewController.orderList.append(it)
+        print(ViewController.orderList)
     }
     
 }
