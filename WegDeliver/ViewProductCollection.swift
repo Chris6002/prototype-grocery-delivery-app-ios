@@ -44,7 +44,7 @@ class ViewProductCollection: UIViewController {
         }
     }
     
-    func getAuth() -> String{
+    func getProduct(){
         var keyRequest = URLRequest(url: URL(string: "https://login.microsoftonline.com/1318d57f-757b-45b3-b1b0-9b3c3842774f/oauth2/token")!)
         keyRequest.httpMethod = "POST"
         keyRequest.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
@@ -63,12 +63,35 @@ class ViewProductCollection: UIViewController {
                         let tokenType = jsonDict["token_type"]
                         let accessToken = jsonDict["access_token"]
                         authorization = tokenType! + " " + accessToken!
-                        return authorization
                     }
                     catch let error {
                         print("JSON Parse Error")
                         return
                     }
+                    
+                    //Request product info by search criterion
+                    let productBaseURL = URL(string: "https://wegmans-es.azure-api.net/productpublic/products/search?")!;
+                    
+                    let productQuery: [String: String] = ["criteria": "soda"]
+                    let productSearchURL = productBaseURL.withQueries(productQuery)!
+                    
+                    var productRequest = URLRequest(url: productSearchURL)
+                    productRequest.httpMethod = "GET"
+                    productRequest.addValue("dbf9da0bc0814d07b6687136b4b36dd7", forHTTPHeaderField: "Product-Subscription-Key")
+                    productRequest.addValue(authorization, forHTTPHeaderField: "Authorization")
+                    
+                    
+                    URLSession.shared.dataTask(with: productRequest) { (data, response, error) in
+                        
+                        if let data = data,
+                            let string = String(data: data, encoding: .utf8) {
+                            print("Product Request")
+                            print(string)
+                        }else{
+                            print("failed")
+                        }
+                    }.resume()
+
                 }
                 
             }
