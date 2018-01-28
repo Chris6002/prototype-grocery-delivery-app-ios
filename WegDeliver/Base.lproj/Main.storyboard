@@ -40,27 +40,34 @@
                                     <segue destination="FNh-FW-BLv" kind="show" id="KXA-WJ-cGb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpg-k5-eBe">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cpg-k5-eBe">
                                 <rect key="frame" x="138" y="565" width="99" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="My List"/>
                                 <connections>
                                     <segue destination="8id-Qb-CJ6" kind="show" id="3vX-LF-vsI"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="HungerXpress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-9e-u55">
-                                <rect key="frame" x="77" y="207" width="220" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <color key="textColor" red="1" green="0.31758089021537328" blue="0.17353389829624333" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="HungerXpress" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LX3-9e-u55">
+                                <rect key="frame" x="77" y="196" width="220" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="jqi-pT-S95"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="italicSystem" pointSize="35"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="H2J-KM-rvI" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="357" id="RvW-rT-EhL"/>
-                            <constraint firstItem="H2J-KM-rvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="g9S-gq-hbn"/>
-                            <constraint firstItem="H2J-KM-rvI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="mpq-ny-Cgr"/>
+                            <constraint firstItem="H2J-KM-rvI" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7s7-Sb-HAI"/>
+                            <constraint firstItem="Cpg-k5-eBe" firstAttribute="centerX" secondItem="H2J-KM-rvI" secondAttribute="centerX" id="Dvs-5V-alU"/>
+                            <constraint firstItem="LX3-9e-u55" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="132" id="EC5-VV-WlO"/>
+                            <constraint firstItem="H2J-KM-rvI" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="130" id="Ggq-GD-oNs"/>
+                            <constraint firstItem="Cpg-k5-eBe" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="138" id="g6O-p1-vWx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cpg-k5-eBe" secondAttribute="bottom" constant="72" id="n8J-Sx-hPY"/>
+                            <constraint firstAttribute="bottom" secondItem="H2J-KM-rvI" secondAttribute="bottom" constant="216" id="t2l-gN-azq"/>
+                            <constraint firstItem="LX3-9e-u55" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="wvd-Qd-r2r"/>
+                            <constraint firstItem="Cpg-k5-eBe" firstAttribute="centerX" secondItem="LX3-9e-u55" secondAttribute="centerX" id="yNU-HR-uGp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
