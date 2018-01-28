@@ -75,7 +75,7 @@
                                 </tableViewCellContentView>
                                 <accessibility key="accessibilityConfiguration" identifier="CategoryCell"/>
                                 <connections>
-                                    <segue destination="mHo-KD-DwC" kind="show" id="g4K-zu-ig6"/>
+                                    <segue destination="y0m-3G-22D" kind="show" id="EF6-id-IGv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -88,6 +88,37 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SRi-hL-l1S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="754.39999999999998" y="32.833583208395808"/>
+        </scene>
+        <!--Meals-->
+        <scene sceneID="DD9-gA-15G">
+            <objects>
+                <tableViewController id="y0m-3G-22D" customClass="EZMeals" customModule="WegDeliver" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ogy-Iu-tIf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="v6m-mF-cBv" customClass="CategoryCell" customModule="WegDeliver" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="v6m-mF-cBv" id="W6K-z5-UJk">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="mHo-KD-DwC" kind="show" id="KNq-3a-UAm"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="y0m-3G-22D" id="VUk-Xe-jcr"/>
+                            <outlet property="delegate" destination="y0m-3G-22D" id="OGv-KA-7RI"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pId-ah-wBI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="755" y="711"/>
         </scene>
         <!--View ProductVC-->
         <scene sceneID="sWL-BN-Lga">

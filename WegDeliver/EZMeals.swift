@@ -1,5 +1,5 @@
 //
-//  Category.swift
+//  EZMeals.swift
 //  WegDeliver
 //
 //  Created by Tianyou Xiao on 1/27/18.
@@ -8,49 +8,28 @@
 
 import UIKit
 
-class Category:UITableViewController{
-  
-    
-    let sections: [CategorySection] = [CategorySection(type:"Baby Essentials")
-        ,CategorySection(type:"Bakery")
-        ,CategorySection(type:"Beer Shop")
-        ,CategorySection(type:"Beverages")
-        ,CategorySection(type:"Bulk Foods")
-        ,CategorySection(type:"Cheese Shop")
-        ,CategorySection(type:"Coffee Shop")
-        ,CategorySection(type:"Dairy")
-        ,CategorySection(type:"Deli")
-        ,CategorySection(type:"EZMeals")
-        ,CategorySection(type:"Floral")
-        ,CategorySection(type:"Frozen Foods")
-        ,CategorySection(type:"Grocery Food")
-        ,CategorySection(type:"Health and Wellness")
-        ,CategorySection(type:"Home and Entertaining")
-        ,CategorySection(type:"Household Essentials")
-        ,CategorySection(type:"International Foods")
-        ,CategorySection(type:"Kosher")
-        ,CategorySection(type:"Meat")
-        ,CategorySection(type:"Nature's Marketplace")
-        ,CategorySection(type:"Personal Care and Makeup")
-        ,CategorySection(type:"Pet Supplies")
-        ,CategorySection(type:"Pizza")
-        ,CategorySection(type:"Prepared Foods")
-        ,CategorySection(type:"Produce")
-        ,CategorySection(type:"Seafood")
-        ,CategorySection(type:"Sub Shop")
+class EZMeals: UITableViewController {
+    let sections: [CategorySection] = [CategorySection(type:"Asian")
+        ,CategorySection(type:"Choose Your Meal")
+        ,CategorySection(type:"Family Pack")
+        ,CategorySection(type:"Mexican")
+        ,CategorySection(type:"Pasta Bowls")
+        ,CategorySection(type:"Power Meals")
+        ,CategorySection(type:"Ready To Cook Meat & Seafood")
         ,CategorySection(type:"Sushi")
-        ,CategorySection(type:"Wine & Spirits")]
+        ,CategorySection(type:"Veggie Bowls")
+        ]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         let statusBarHeight = UIApplication.shared.statusBarFrame.height
         
         let insets = UIEdgeInsets(top: statusBarHeight, left: 0, bottom: 0, right: 0)
         
         tableView.contentInset = insets
         tableView.scrollIndicatorInsets = insets
-    
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -63,7 +42,7 @@ class Category:UITableViewController{
     }
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "All Product"
+        return "All EZMeals"
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -81,9 +60,9 @@ class Category:UITableViewController{
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as? CategoryCell
         
-        let viewCategoryVC = segue.destination as! UITableViewController
+        let viewCategoryVC = segue.destination as! ViewProductCollection
         viewCategoryVC.title = cell?.textLabel?.text
         
     }
-  
+    
 }

@@ -24,6 +24,7 @@
 		E19A48F5201D232800EE7159 /* ViewProductVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48F4201D232800EE7159 /* ViewProductVC.swift */; };
 		E19A48F7201D2C0200EE7159 /* PVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48F6201D2C0200EE7159 /* PVCell.swift */; };
 		E19A48F9201D30F300EE7159 /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19A48F8201D30F300EE7159 /* Product.swift */; };
+		E1E418BD201D5D8100D1C5CE /* EZMeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E418BC201D5D8100D1C5CE /* EZMeals.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,7 @@
 		E19A48F4201D232800EE7159 /* ViewProductVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewProductVC.swift; sourceTree = "<group>"; };
 		E19A48F6201D2C0200EE7159 /* PVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PVCell.swift; sourceTree = "<group>"; };
 		E19A48F8201D30F300EE7159 /* Product.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
+		E1E418BC201D5D8100D1C5CE /* EZMeals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EZMeals.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				E19A48F0201D1AC900EE7159 /* ViewProductCollection.swift */,
 				E19A48F4201D232800EE7159 /* ViewProductVC.swift */,
 				E19A48F6201D2C0200EE7159 /* PVCell.swift */,
+				E1E418BC201D5D8100D1C5CE /* EZMeals.swift */,
 			);
 			path = WegDeliver;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				E19A48EF201D193700EE7159 /* CategorySection.swift in Sources */,
 				E19A48F9201D30F300EE7159 /* Product.swift in Sources */,
 				CA73731F201CEFF900A1B6D5 /* ViewController.swift in Sources */,
+				E1E418BD201D5D8100D1C5CE /* EZMeals.swift in Sources */,
 				CA73731D201CEFF900A1B6D5 /* AppDelegate.swift in Sources */,
 				E19A48E7201D085200EE7159 /* Category.swift in Sources */,
 				E19A48F7201D2C0200EE7159 /* PVCell.swift in Sources */,
